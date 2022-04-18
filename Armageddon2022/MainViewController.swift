@@ -10,10 +10,16 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class MainViewController: UICollectionViewController {
+    
+    var casedAsteroids: [String: [Asteroid]] = [:]
+    var asteroids: [Asteroid] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchAsteroids()
+        print(casedAsteroids.count)
         
+
     }
 
     /*
@@ -34,21 +40,16 @@ class MainViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        asteroids.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AsteroidViewCell
     
         // Configure the cell
-        
-        cell.contentView.layer.borderWidth = 1.0;
-//        cell.contentView.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
-//        cell.contentView.layer.shadowColor = UIColor.black.cgColor
-//        cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//        cell.contentView.layer.shadowRadius = 2.0
-//        cell.contentView.layer.shadowOpacity = 0.5
-//        cell.contentView.layer.masksToBounds = true
+        let astro = asteroids[indexPath.row]
+        cell.contentView.layer.borderWidth = 0.6
+        cell.configuration(with: astro)
 
       
         return cell
@@ -85,5 +86,31 @@ class MainViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension MainViewController {
+    private func fetchAsteroids() {
+        NetworkManager.shared.fetch(from: Links.allAsteroids.rawValue, completion: { result in
+            switch result {
+            case .success(let asteroids):
+                self.casedAsteroids = asteroids.near_earth_objects
+                print(self.casedAsteroids.count)
+                self.asteroids = self.separatot(for: self.casedAsteroids)
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        })
+    }
+    
+    func separatot(for dictionary: [String: [Asteroid]]) -> [Asteroid] {
+        var count: [Asteroid] = []
+        for (_, array) in dictionary {
+            for ast in array {
+                count.append(ast)
+            }
+        }
+        return count
+    }
 }
 

@@ -14,6 +14,8 @@
 		E8D321A0280D64C900244667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D3219E280D64C900244667 /* LaunchScreen.storyboard */; };
 		E8D321AF280D685400244667 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D321AE280D685400244667 /* MainViewController.swift */; };
 		E8D321B4280D6CFD00244667 /* AsteroidViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D321B3280D6CFD00244667 /* AsteroidViewCell.swift */; };
+		E8D321B8280D88B800244667 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D321B7280D88B800244667 /* NetworkManager.swift */; };
+		E8D321BA280D890100244667 /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D321B9280D890100244667 /* Asteroid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E8D321A1280D64C900244667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8D321AE280D685400244667 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8D321B3280D6CFD00244667 /* AsteroidViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewCell.swift; sourceTree = "<group>"; };
+		E8D321B7280D88B800244667 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E8D321B9280D890100244667 /* Asteroid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asteroid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		E8D321A8280D664700244667 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E8D321B9280D890100244667 /* Asteroid.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 		E8D321AC280D66A500244667 /* Servises */ = {
 			isa = PBXGroup;
 			children = (
+				E8D321B7280D88B800244667 /* NetworkManager.swift */,
 			);
 			name = Servises;
 			sourceTree = "<group>";
@@ -199,7 +205,9 @@
 			files = (
 				E8D321AF280D685400244667 /* MainViewController.swift in Sources */,
 				E8D32194280D64C800244667 /* AppDelegate.swift in Sources */,
+				E8D321B8280D88B800244667 /* NetworkManager.swift in Sources */,
 				E8D32196280D64C800244667 /* SceneDelegate.swift in Sources */,
+				E8D321BA280D890100244667 /* Asteroid.swift in Sources */,
 				E8D321B4280D6CFD00244667 /* AsteroidViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
