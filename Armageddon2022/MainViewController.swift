@@ -13,13 +13,12 @@ class MainViewController: UICollectionViewController {
     
     var casedAsteroids: [String: [Asteroid]] = [:]
     var asteroids: [Asteroid] = []
+    var kmDistance: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAsteroids()
         print(casedAsteroids.count)
-        
-
     }
 
     /*
@@ -49,11 +48,12 @@ class MainViewController: UICollectionViewController {
         // Configure the cell
         let astro = asteroids[indexPath.row]
         cell.contentView.layer.borderWidth = 0.6
-        cell.configuration(with: astro)
+        cell.configuration(with: astro, and: kmDistance)
 
       
         return cell
     }
+  
 
     // MARK: UICollectionViewDelegate
 
@@ -111,6 +111,12 @@ extension MainViewController {
             }
         }
         return count
+    }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: UIScreen.main.bounds.width - 36, height: 308)
     }
 }
 
