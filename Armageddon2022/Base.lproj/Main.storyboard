@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KN9-ha-5AB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CA4-Vv-dAp">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Астероиды-->
+        <!--Армагеддон 2022-->
         <scene sceneID="6kG-rw-84S">
             <objects>
                 <collectionViewController id="h3O-F3-vtA" customClass="MainViewController" customModule="Armageddon2022" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,6 +148,7 @@
                                     <outlet property="diagnosisLabel" destination="Xxc-Oo-Nnn" id="DOW-ez-Ciq"/>
                                     <outlet property="nameLabel" destination="OVN-fb-3ai" id="l9Y-NX-mzD"/>
                                     <outlet property="propertiesLabel" destination="ugu-83-5MD" id="Nrn-iB-DrL"/>
+                                    <segue destination="rg4-JS-gJC" kind="show" id="uyO-Yu-0ki"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -155,55 +157,145 @@
                             <outlet property="delegate" destination="h3O-F3-vtA" id="qxF-ar-dyx"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Астероиды" image="globe" catalog="system" id="K2q-T5-Lfq"/>
-                    <navigationItem key="navigationItem" id="Dqi-R3-RwD"/>
+                    <navigationItem key="navigationItem" title="Армагеддон 2022" leftItemsSupplementBackButton="YES" id="Dqi-R3-RwD">
+                        <barButtonItem key="rightBarButtonItem" image="line.3.horizontal.decrease" catalog="system" id="mOg-uy-A54">
+                            <connections>
+                                <segue destination="DFs-P4-DUN" kind="show" id="7d1-qf-gOF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dF4-lg-lob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868.1159420289857" y="84.375"/>
+            <point key="canvasLocation" x="2790.7692307692305" y="480.5687203791469"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ibE-L7-dEH">
+        <!--View Controller-->
+        <scene sceneID="aLG-pD-evD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KN9-ha-5AB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Wb3-ET-Ifw">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="CA4-Vv-dAp" kind="relationship" relationship="rootViewController" id="SGk-OG-UyC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gys-Lv-9JU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="rg4-JS-gJC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aVN-nJ-kRg">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xD6-5h-NaC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="0y9-37-JMc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STl-wz-SiC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="84.375"/>
+            <point key="canvasLocation" x="3814" y="766"/>
+        </scene>
+        <!--Фильтр-->
+        <scene sceneID="82O-D6-yHo">
+            <objects>
+                <tableViewController title="Фильтр" id="DFs-P4-DUN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kOH-VW-TfG">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellRes" id="R4L-Tv-a2m">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R4L-Tv-a2m" id="WES-4V-uwn">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DFs-P4-DUN" id="PFs-Ux-T2P"/>
+                            <outlet property="delegate" destination="DFs-P4-DUN" id="YqF-bs-bKc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Фильтр" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="547-0a-ygy">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="jzt-S2-ZB0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="qrl-OV-Sc8"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggq-MX-E98" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3815" y="35"/>
+        </scene>
+        <!--На уничтожение-->
+        <scene sceneID="sq4-EO-yk8">
+            <objects>
+                <tableViewController id="XsK-LB-Adf" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Kki-wy-Cjg">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellForTrash" id="z57-sC-pPD">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z57-sC-pPD" id="sWE-CE-gfm">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XsK-LB-Adf" id="Lol-A3-RQ0"/>
+                            <outlet property="delegate" destination="XsK-LB-Adf" id="KVC-i6-yve"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="На уничтожение" image="trash.fill" catalog="system" id="EGt-2O-5k8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JaH-sb-Giu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="1189"/>
         </scene>
         <!--Армагедон 2022-->
         <scene sceneID="6fJ-LP-hPx">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="CA4-Vv-dAp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Армагедон 2022" id="FfD-5y-lcc"/>
+                    <navigationItem key="navigationItem" title="Армагедон 2022" largeTitleDisplayMode="never" id="FfD-5y-lcc">
+                        <barButtonItem key="rightBarButtonItem" image="line.3.horizontal.decrease" catalog="system" id="dp9-dB-hEZ"/>
+                    </navigationItem>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UGT-9v-i53">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="h3O-F3-vtA" kind="relationship" relationship="viewControllers" id="CwS-NV-C1D"/>
+                        <segue destination="U9Z-Hg-yNK" kind="relationship" relationship="viewControllers" id="CwS-NV-C1D"/>
+                        <segue destination="XsK-LB-Adf" kind="relationship" relationship="viewControllers" id="cOS-LA-3Tc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBb-ZO-NuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.97101449275374" y="84.375"/>
+            <point key="canvasLocation" x="720" y="766"/>
+        </scene>
+        <!--Армагеддон 2022-->
+        <scene sceneID="4oH-OL-wxc">
+            <objects>
+                <navigationController title="Армагеддон 2022" automaticallyAdjustsScrollViewInsets="NO" id="U9Z-Hg-yNK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Астероиды" image="globe" catalog="system" id="K2q-T5-Lfq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HMr-6r-ZK4">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h3O-F3-vtA" kind="relationship" relationship="rootViewController" id="tp5-3p-ESB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wnT-GC-re4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861.5384615384614" y="480.5687203791469"/>
         </scene>
     </scenes>
     <resources>
         <image name="astra" width="61" height="62"/>
         <image name="dino" width="35" height="30"/>
         <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
