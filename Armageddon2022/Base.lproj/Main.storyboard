@@ -42,41 +42,6 @@
                                             <rect key="frame" x="293" y="115" width="35" height="30"/>
                                             <color key="tintColor" systemColor="labelColor"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugu-83-5MD">
-                                            <rect key="frame" x="16" y="161" width="308" height="84"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="84" id="jG4-Db-KZH"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3sr-eA-zKg">
-                                            <rect key="frame" x="16" y="261" width="308" height="31"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-Oo-Nnn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="31"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVm-9B-mI4">
-                                                    <rect key="frame" x="154" y="0.0" width="154" height="31"/>
-                                                    <color key="backgroundColor" name="AccentColor"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="УНИЧТОЖИТЬ"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <integer key="value" value="14"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="destroyTheAsteroid:" destination="lNr-la-MYq" eventType="touchUpInside" id="fCH-cs-q6o"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVN-fb-3ai">
                                             <rect key="frame" x="16" y="105" width="63" height="29"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
@@ -86,24 +51,63 @@
                                         <imageView verifyAmbiguity="ignoreSizes" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="61" placeholderIntrinsicHeight="62" image="astra" translatesAutoresizingMaskIntoConstraints="NO" id="qe3-jW-D2h">
                                             <rect key="frame" x="27" y="22" width="61" height="62"/>
                                         </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="TTd-9f-g70">
+                                            <rect key="frame" x="16" y="161" width="308" height="131"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugu-83-5MD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="100"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3sr-eA-zKg">
+                                                    <rect key="frame" x="0.0" y="100" width="308" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-Oo-Nnn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="154" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVm-9B-mI4">
+                                                            <rect key="frame" x="154" y="0.0" width="154" height="31"/>
+                                                            <color key="backgroundColor" name="AccentColor"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="УНИЧТОЖИТЬ"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <integer key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="destroyTheAsteroid:" destination="lNr-la-MYq" eventType="touchUpInside" id="fCH-cs-q6o"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3sr-eA-zKg" firstAttribute="leading" secondItem="TTd-9f-g70" secondAttribute="leading" id="L0T-Wy-RVu"/>
+                                                <constraint firstAttribute="trailing" secondItem="3sr-eA-zKg" secondAttribute="trailing" id="ciC-Ek-sWQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="3sr-eA-zKg" secondAttribute="bottom" id="luh-PT-iQK"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="eeG-pm-5Pj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OVN-fb-3ai" secondAttribute="trailing" constant="8" symbolic="YES" id="5ye-sO-eUc"/>
-                                        <constraint firstItem="3sr-eA-zKg" firstAttribute="top" secondItem="ugu-83-5MD" secondAttribute="bottom" constant="16" id="BCF-XD-RDM"/>
-                                        <constraint firstAttribute="trailing" secondItem="ugu-83-5MD" secondAttribute="trailing" constant="16" id="FT8-SX-L1O"/>
-                                        <constraint firstItem="ugu-83-5MD" firstAttribute="leading" secondItem="Wq1-ec-jeg" secondAttribute="leading" constant="16" id="GwO-HU-0Iy"/>
                                         <constraint firstItem="OVN-fb-3ai" firstAttribute="leading" secondItem="Wq1-ec-jeg" secondAttribute="leading" constant="16" id="MSc-dQ-P7y"/>
-                                        <constraint firstAttribute="bottom" secondItem="3sr-eA-zKg" secondAttribute="bottom" constant="16" id="RcX-kc-JQs"/>
-                                        <constraint firstItem="ugu-83-5MD" firstAttribute="top" secondItem="nc6-RR-htr" secondAttribute="bottom" constant="16" id="Rcb-lj-y7b"/>
+                                        <constraint firstAttribute="trailing" secondItem="TTd-9f-g70" secondAttribute="trailing" constant="16" id="SST-Lh-jbP"/>
                                         <constraint firstItem="OVN-fb-3ai" firstAttribute="top" secondItem="Wq1-ec-jeg" secondAttribute="top" constant="105" id="UCa-Qc-LqR"/>
                                         <constraint firstItem="OVN-fb-3ai" firstAttribute="top" secondItem="qe3-jW-D2h" secondAttribute="bottom" constant="21" id="Vmi-v3-pXW"/>
-                                        <constraint firstItem="3sr-eA-zKg" firstAttribute="leading" secondItem="Wq1-ec-jeg" secondAttribute="leading" constant="16" id="Z5u-91-5Nm"/>
                                         <constraint firstItem="nc6-RR-htr" firstAttribute="top" secondItem="Wq1-ec-jeg" secondAttribute="top" id="ZaG-Vf-53k"/>
                                         <constraint firstAttribute="trailing" secondItem="eeG-pm-5Pj" secondAttribute="trailing" constant="12" id="aHt-ma-a3t"/>
                                         <constraint firstItem="nc6-RR-htr" firstAttribute="leading" secondItem="Wq1-ec-jeg" secondAttribute="leading" id="dEt-oq-Ku4"/>
                                         <constraint firstItem="qe3-jW-D2h" firstAttribute="leading" secondItem="Wq1-ec-jeg" secondAttribute="leading" constant="27" id="fOW-rM-Qbd"/>
                                         <constraint firstAttribute="trailing" secondItem="nc6-RR-htr" secondAttribute="trailing" id="hBr-Rd-NJc"/>
-                                        <constraint firstAttribute="trailing" secondItem="3sr-eA-zKg" secondAttribute="trailing" constant="16" id="vs2-Ya-Qad"/>
+                                        <constraint firstItem="TTd-9f-g70" firstAttribute="top" secondItem="nc6-RR-htr" secondAttribute="bottom" constant="16" id="kbc-8k-7eF"/>
+                                        <constraint firstItem="TTd-9f-g70" firstAttribute="leading" secondItem="Wq1-ec-jeg" secondAttribute="leading" constant="16" id="mh4-x8-Jj1"/>
+                                        <constraint firstAttribute="bottom" secondItem="TTd-9f-g70" secondAttribute="bottom" constant="16" id="qk1-Hj-Z9E"/>
                                         <constraint firstItem="eeG-pm-5Pj" firstAttribute="top" secondItem="Wq1-ec-jeg" secondAttribute="top" constant="115" id="xrK-TU-Gg9"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
