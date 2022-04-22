@@ -7,6 +7,8 @@ https://api.nasa.gov/
 
 Сторонних фреймворков применено не было.
 
+<img width="657" alt="Снимок экрана 2022-04-22 в 20 55 58" src="https://user-images.githubusercontent.com/79254522/164769006-bc9c4b2b-ecbd-4f14-9a9f-8762566b1205.png">
+
 Стартовый экран:
 
 <img width="206" alt="Снимок экрана 2022-04-22 в 20 39 51" src="https://user-images.githubusercontent.com/79254522/164766244-2931116e-107a-4fcc-be3d-d99f6bb6a281.png">
