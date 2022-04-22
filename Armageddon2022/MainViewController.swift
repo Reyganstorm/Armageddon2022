@@ -63,7 +63,7 @@ class MainViewController: UICollectionViewController  {
             cell.setColor(hazard: astro.is_potentially_hazardous_asteroid)
             cell.configuration(with: astro, and: kmDistance)
         }
-        cell.contentView.layer.borderWidth = 0.6
+        //cell.contentView.layer.borderWidth = 0.6
         
         return cell
     }
