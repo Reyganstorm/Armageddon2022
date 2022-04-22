@@ -67,7 +67,7 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func allowingSettings(_ sender: UIBarButtonItem) {
         delegate.setNewSettings(for: kmDistance, and: dangerous)
-        self.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     
