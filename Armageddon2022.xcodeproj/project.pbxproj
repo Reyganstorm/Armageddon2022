@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E8BF1316281199FB00533CBC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF1315281199FB00533CBC /* DetailViewController.swift */; };
+		E8BF131828119B4200533CBC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF131728119B4200533CBC /* SettingsViewController.swift */; };
 		E8D32194280D64C800244667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D32193280D64C800244667 /* AppDelegate.swift */; };
 		E8D32196280D64C800244667 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D32195280D64C800244667 /* SceneDelegate.swift */; };
 		E8D3219B280D64C800244667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D32199280D64C800244667 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		E8BF1315281199FB00533CBC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E8BF131728119B4200533CBC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E8D32190280D64C800244667 /* Armageddon2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Armageddon2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D32193280D64C800244667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8D32195280D64C800244667 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				E8D321AE280D685400244667 /* MainViewController.swift */,
 				E8BF1315281199FB00533CBC /* DetailViewController.swift */,
+				E8BF131728119B4200533CBC /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				E8D321BA280D890100244667 /* Asteroid.swift in Sources */,
 				E8D321B4280D6CFD00244667 /* AsteroidViewCell.swift in Sources */,
 				E8BF1316281199FB00533CBC /* DetailViewController.swift in Sources */,
+				E8BF131828119B4200533CBC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
