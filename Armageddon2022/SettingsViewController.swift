@@ -9,8 +9,10 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
     
-    var kmDistance = true
-    var dangerous = false
+    var kmDistance: Bool!
+    var dangerous: Bool!
+    
+    var delegate: SettingsDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +34,16 @@ class SettingsViewController: UITableViewController {
         case 0:
             cell.textLabel?.text = "Ед. изм. расстояний"
             let customSC = UISegmentedControl(items: ["км", "лун. орб."])
-            customSC.selectedSegmentIndex = 0
-            customSC.layer.cornerRadius = 5.0  // Don't let background bleed
+            customSC.selectedSegmentIndex = kmDistance ? 0 : 1
+            customSC.layer.cornerRadius = 5.0
             customSC.backgroundColor = .lightGray
             customSC.tintColor = .white
-
-                  // Add target action method
-            customSC.addTarget(self, action: #selector(switching), for: .valueChanged)
+            customSC.addTarget(self, action: #selector(changeDistance), for: .valueChanged)
             cell.accessoryView = customSC
         default:
             cell.textLabel?.text = "Показывать только опасные"
-            let switchView = UISwitch(frame: .zero)
-            switchView.setOn(false, animated: true)
+            let switchView = UISwitch()
+            switchView.setOn(dangerous ? true : false, animated: true)
             //switchView.tag = indexPath.row // for detect which row switch Changed
             switchView.addTarget(self, action: #selector(switching), for: .valueChanged)
             cell.accessoryView = switchView
@@ -52,24 +52,24 @@ class SettingsViewController: UITableViewController {
         return cell
     }
     
-    @objc func changeColor(sender: UISegmentedControl) {
-          switch sender.selectedSegmentIndex {
-          case 1:
-              dangerous = true
-          case 2:
-              dangerous = false
-          default:
-              dangerous.toggle()
-          }
-      }
-    
-    
-    @objc private func switching() {
-        kmDistance.toggle()
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    @objc func changeDistance() {
+        kmDistance.toggle()
+      }
+    
+    @objc private func switching() {
+        dangerous.toggle()
+    }
+    
+    
+    @IBAction func allowingSettings(_ sender: UIBarButtonItem) {
+        delegate.setNewSettings(for: kmDistance, and: dangerous)
+        dismiss(animated: true)
+    }
+    
+    
 
 }

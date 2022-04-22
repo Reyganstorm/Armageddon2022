@@ -7,9 +7,10 @@
 
 import Foundation
 
-enum Links: String, CaseIterable {
-    case allAsteroids = "https://api.nasa.gov/neo/rest/v1/feed?start_date=2022-04-21&end_date=2022-04-22&api_key=FbmCl54hDp98EmrxHMuDTRLZPqcCTDCPzSh35fNf"
+enum Links: String {
+    case allAsteroids = "https://api.nasa.gov/neo/rest/v1/feed?start_date=2022-04-22&end_date=2022-04-25&api_key=FbmCl54hDp98EmrxHMuDTRLZPqcCTDCPzSh35fNf"
     case forMore
+    // Если успею приделать сюда ссылку на продолжение скрола вниз по tableView
     
 }
 

@@ -7,29 +7,33 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+protocol SettingsDelegate {
+    func setNewSettings(for distanceCount: Bool, and potentialHazard: Bool)
+}
+
 
 class MainViewController: UICollectionViewController {
     
-    var casedAsteroids: [String: [Asteroid]] = [:]
     var asteroids: [Asteroid] = []
+    var dangerousAsteroids: [Asteroid] = []
     var kmDistance: Bool = true
+    var dangerous = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAsteroids()
-        print(casedAsteroids.count)
     }
 
-    /*
+   
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        guard let settingsVC = segue.destination as? SettingsViewController else {return}
+        settingsVC.delegate = self
+        settingsVC.kmDistance = self.kmDistance
+        settingsVC.dangerous = self.dangerous
     }
-    */
+   
 
     // MARK: UICollectionViewDataSource
 
@@ -37,55 +41,26 @@ class MainViewController: UICollectionViewController {
         1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        asteroids.count
+        dangerous ? dangerousAsteroids.count : asteroids.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AsteroidViewCell
-    
-        // Configure the cell
-        let astro = asteroids[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AsteroidViewCell
+        
+        switch dangerous {
+        case true:
+            let astro = dangerousAsteroids[indexPath.row]
+            cell.configuration(with: astro, and: kmDistance)
+        case false:
+            let astro = asteroids[indexPath.row]
+            cell.configuration(with: astro, and: kmDistance)
+        }
         cell.contentView.layer.borderWidth = 0.6
-        cell.configuration(with: astro, and: kmDistance)
+        
 
-      
         return cell
     }
-  
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
 extension MainViewController {
@@ -93,9 +68,8 @@ extension MainViewController {
         NetworkManager.shared.fetch(from: Links.allAsteroids.rawValue, completion: { result in
             switch result {
             case .success(let asteroids):
-                self.casedAsteroids = asteroids.near_earth_objects
-                print(self.casedAsteroids.count)
-                self.asteroids = self.separatot(for: self.casedAsteroids)
+                self.asteroids = self.separator(for: asteroids.near_earth_objects)
+                self.dangerousAsteroids = self.findDangerousAsteroids()
                 self.collectionView.reloadData()
             case .failure(let error):
                 print(error)
@@ -103,7 +77,7 @@ extension MainViewController {
         })
     }
     
-    func separatot(for dictionary: [String: [Asteroid]]) -> [Asteroid] {
+    private func separator(for dictionary: [String: [Asteroid]]) -> [Asteroid] {
         var count: [Asteroid] = []
         for (_, array) in dictionary {
             for ast in array {
@@ -111,6 +85,23 @@ extension MainViewController {
             }
         }
         return count
+    }
+    
+    private func findDangerousAsteroids() -> [Asteroid] {
+        for asteroid in asteroids {
+            if asteroid.is_potentially_hazardous_asteroid {
+                dangerousAsteroids.append(asteroid)
+            }
+        }
+        return dangerousAsteroids
+    }
+}
+
+extension MainViewController: SettingsDelegate {
+    func setNewSettings(for distanceCount: Bool, and potentialHazard: Bool) {
+        self.kmDistance = distanceCount
+        self.dangerous = potentialHazard
+        self.collectionView.reloadData()
     }
 }
 
