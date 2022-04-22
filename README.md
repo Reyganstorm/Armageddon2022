@@ -23,7 +23,8 @@ https://api.nasa.gov/
 
 Переходим к меню настроек: 
 
-<img width="229" alt="Снимок экрана 2022-04-22 в 20 48 56" src="https://user-images.githubusercontent.com/79254522/164767978-3caed396-6e28-41ae-a626-54fccf37dca9.png">
+<img width="288" alt="Снимок экрана 2022-04-22 в 22 08 45" src="https://user-images.githubusercontent.com/79254522/164778870-695e7d55-6771-4e40-844c-9892e5b9fd46.png">
+
 
 После принятие получаем: 
 
