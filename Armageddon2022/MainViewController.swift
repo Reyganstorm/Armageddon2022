@@ -55,13 +55,13 @@ class MainViewController: UICollectionViewController  {
         case true:
             let astro = dangerousAsteroids[indexPath.row]
             cell.astro = astro
+            cell.setColor(hazard: astro.is_potentially_hazardous_asteroid)
             cell.configuration(with: astro, and: kmDistance)
-            //cell.destroyTheAsteroid(astro: astro)
         case false:
             let astro = asteroids[indexPath.row]
             cell.astro = astro
+            cell.setColor(hazard: astro.is_potentially_hazardous_asteroid)
             cell.configuration(with: astro, and: kmDistance)
-            //cell.destroyTheAsteroid(astro: astro)
         }
         cell.contentView.layer.borderWidth = 0.6
         

@@ -35,7 +35,7 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nc6-RR-htr">
                                             <rect key="frame" x="0.0" y="0.0" width="340" height="145"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="145" id="Qk1-XQ-tAI"/>
                                                 <constraint firstAttribute="width" constant="340" id="Xlt-8O-GXc"/>
@@ -51,7 +51,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView verifyAmbiguity="ignoreSizes" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="61" placeholderIntrinsicHeight="62" image="astra" translatesAutoresizingMaskIntoConstraints="NO" id="qe3-jW-D2h">
+                                        <imageView verifyAmbiguity="ignoreSizes" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="61" placeholderIntrinsicHeight="62" translatesAutoresizingMaskIntoConstraints="NO" id="qe3-jW-D2h">
                                             <rect key="frame" x="27" y="22" width="61" height="62"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TTd-9f-g70">
@@ -143,7 +143,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="340" height="308"/>
                                 <connections>
-                                    <outlet property="asteroidImage" destination="qe3-jW-D2h" id="Mkn-BP-1lF"/>
+                                    <outlet property="asteroidImage" destination="qe3-jW-D2h" id="uXS-11-Hfp"/>
                                     <outlet property="backgroungView" destination="nc6-RR-htr" id="CDZ-Pv-hjE"/>
                                     <outlet property="diagnosisLabel" destination="Xxc-Oo-Nnn" id="DOW-ez-Ciq"/>
                                     <outlet property="nameLabel" destination="OVN-fb-3ai" id="l9Y-NX-mzD"/>
@@ -229,7 +229,7 @@
             </objects>
             <point key="canvasLocation" x="3815" y="35"/>
         </scene>
-        <!--На уничтожение-->
+        <!--Список на уничтожение-->
         <scene sceneID="sq4-EO-yk8">
             <objects>
                 <tableViewController id="XsK-LB-Adf" customClass="DeletedTableViewController" customModule="Armageddon2022" customModuleProvider="target" sceneMemberID="viewController">
@@ -238,12 +238,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellForTrash" id="z57-sC-pPD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellForTrash" textLabel="n5t-Ej-5qn" style="IBUITableViewCellStyleDefault" id="z57-sC-pPD">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z57-sC-pPD" id="sWE-CE-gfm">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n5t-Ej-5qn">
+                                            <rect key="frame" x="20" y="0.0" width="350" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -252,11 +261,11 @@
                             <outlet property="delegate" destination="XsK-LB-Adf" id="KVC-i6-yve"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="На уничтожение" image="trash.fill" catalog="system" id="EGt-2O-5k8"/>
+                    <navigationItem key="navigationItem" title="Список на уничтожение" id="7t1-tH-RqS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JaH-sb-Giu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="1189"/>
+            <point key="canvasLocation" x="2790.7692307692305" y="1188.6255924170616"/>
         </scene>
         <!--Армагедон 2022-->
         <scene sceneID="6fJ-LP-hPx">
@@ -274,7 +283,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="U9Z-Hg-yNK" kind="relationship" relationship="viewControllers" id="CwS-NV-C1D"/>
-                        <segue destination="XsK-LB-Adf" kind="relationship" relationship="viewControllers" id="cOS-LA-3Tc"/>
+                        <segue destination="eSB-8d-4YL" kind="relationship" relationship="viewControllers" id="cOS-LA-3Tc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBb-ZO-NuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -300,9 +309,27 @@
             </objects>
             <point key="canvasLocation" x="1861.5384615384614" y="480.5687203791469"/>
         </scene>
+        <!--На уничтожение-->
+        <scene sceneID="fPB-VW-vzY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eSB-8d-4YL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="На уничтожение" image="trash.fill" catalog="system" id="EGt-2O-5k8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="upt-Jf-kiS">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XsK-LB-Adf" kind="relationship" relationship="rootViewController" id="rIX-aK-C0h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cC-ox-G7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861.5384615384614" y="1188.6255924170616"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="astra" width="61" height="62"/>
         <image name="dino" width="35" height="30"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
@@ -315,9 +342,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
