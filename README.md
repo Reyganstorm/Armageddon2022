@@ -25,7 +25,7 @@ https://api.nasa.gov/
 
 <img width="229" alt="Снимок экрана 2022-04-22 в 20 48 56" src="https://user-images.githubusercontent.com/79254522/164767978-3caed396-6e28-41ae-a626-54fccf37dca9.png">
 
-После принятие получае: 
+После принятие получаем: 
 
 <img width="205" alt="Снимок экрана 2022-04-22 в 20 45 51" src="https://user-images.githubusercontent.com/79254522/164767612-b3cdad05-67f5-4d7f-862a-4d00b7235ca0.png">
 
