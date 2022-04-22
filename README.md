@@ -11,7 +11,8 @@ https://api.nasa.gov/
 
 Стартовый экран:
 
-<img width="206" alt="Снимок экрана 2022-04-22 в 20 39 51" src="https://user-images.githubusercontent.com/79254522/164766244-2931116e-107a-4fcc-be3d-d99f6bb6a281.png">
+<img width="206" alt="Снимок экрана 2022-04-22 в 20 39 51" src="https://user-images.githubusercontent.com/79254522/164766244-2931116e-107a-4fcc-be3d-d99f6bb6a281.png"> <img width="279" alt="Снимок экрана 2022-04-22 в 22 18 10" src="https://user-images.githubusercontent.com/79254522/164780007-e20fdf01-699b-4e9f-90a9-9f879acc1856.png">
+
 
 
 
