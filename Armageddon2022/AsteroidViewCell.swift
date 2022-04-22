@@ -9,15 +9,15 @@ import UIKit
 
 class AsteroidViewCell: UICollectionViewCell {
     
-    @IBOutlet var asteroidImage: UIImageView!
+    var astro: Asteroid? = nil
+    var chos = false
     
+    @IBOutlet var asteroidImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var backgroungView: UIImageView!
     @IBOutlet var propertiesLabel: UILabel!
     @IBOutlet var diagnosisLabel: UILabel!
     
-    @IBAction func destroyTheAsteroid(_ sender: UIButton) {
-    }
     
 
     func configuration(with asteroid: Asteroid, and kmDistance: Bool) {
@@ -51,5 +51,23 @@ class AsteroidViewCell: UICollectionViewCell {
         asteroidImage.sizeThatFits(CGSize(width: 122, height: 124))
     }
     
+    func takeAstro(asteroid: Asteroid) -> Asteroid {
+        return asteroid
+    }
 
+    
+    @IBAction func destroyButtonPressed(_ sender: UIButton) {
+        switch chos {
+        case true:
+            chos = true
+        case false:
+            guard let astro = astro else {return}
+            ChosenAsteroid.shared.addNewAsterroid(astr: astro)
+            print(1)
+            sender.setTitle("DONE", for: .normal)
+            chos = true
+        }
+        
+    }
+    
 }

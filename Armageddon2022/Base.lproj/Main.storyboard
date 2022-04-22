@@ -80,7 +80,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-Oo-Nnn">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-Oo-Nnn">
                                                             <rect key="frame" x="90.666666666666686" y="0.0" width="91.333333333333314" height="27"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -103,7 +103,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="destroyTheAsteroid:" destination="lNr-la-MYq" eventType="touchUpInside" id="fCH-cs-q6o"/>
+                                                                <action selector="destroyButtonPressed:" destination="lNr-la-MYq" eventType="touchUpInside" id="1BW-fe-ge2"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -232,7 +232,7 @@
         <!--На уничтожение-->
         <scene sceneID="sq4-EO-yk8">
             <objects>
-                <tableViewController id="XsK-LB-Adf" sceneMemberID="viewController">
+                <tableViewController id="XsK-LB-Adf" customClass="DeletedTableViewController" customModule="Armageddon2022" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Kki-wy-Cjg">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

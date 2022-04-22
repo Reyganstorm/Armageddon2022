@@ -11,8 +11,11 @@ protocol SettingsDelegate {
     func setNewSettings(for distanceCount: Bool, and potentialHazard: Bool)
 }
 
+protocol CollectionViewDelegate {
+    func addAsteroid(asteroid: Asteroid)
+}
 
-class MainViewController: UICollectionViewController {
+class MainViewController: UICollectionViewController  {
     
     var asteroids: [Asteroid] = []
     var dangerousAsteroids: [Asteroid] = []
@@ -51,14 +54,17 @@ class MainViewController: UICollectionViewController {
         switch dangerous {
         case true:
             let astro = dangerousAsteroids[indexPath.row]
+            cell.astro = astro
             cell.configuration(with: astro, and: kmDistance)
+            //cell.destroyTheAsteroid(astro: astro)
         case false:
             let astro = asteroids[indexPath.row]
+            cell.astro = astro
             cell.configuration(with: astro, and: kmDistance)
+            //cell.destroyTheAsteroid(astro: astro)
         }
         cell.contentView.layer.borderWidth = 0.6
         
-
         return cell
     }
 }
