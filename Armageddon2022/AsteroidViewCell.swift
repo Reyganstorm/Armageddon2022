@@ -13,9 +13,7 @@ class AsteroidViewCell: UICollectionViewCell {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var backgroungView: UIImageView!
-    
     @IBOutlet var propertiesLabel: UILabel!
-    
     @IBOutlet var diagnosisLabel: UILabel!
     
     @IBAction func destroyTheAsteroid(_ sender: UIButton) {
@@ -29,12 +27,10 @@ class AsteroidViewCell: UICollectionViewCell {
         
     
 //        let dateFormatterGet = DateFormatter()
-//        dateFormatterGet.dateFormat = "YYYY-MM-dd"
+//        dateFormatterGet.dateFormat = "yyyy-MM-dd"
 //        dateFormatterGet.locale = Locale(identifier: "ru_RU")
 //        let strDate = dateFormatterGet.date(from: asteroid.close_approach_data[0].close_approach_date)
         
-        
-        // "YYYY-MM-DD"
         let diametr = (asteroid.estimated_diameter.meters.estimated_diameter_max + asteroid.estimated_diameter.meters.estimated_diameter_min)/2
         
         nameLabel.text = asteroid.name
@@ -43,7 +39,7 @@ class AsteroidViewCell: UICollectionViewCell {
         """
         Диаметр: \(String(format: "%.0f",diametr)) м
         Подлетает \(asteroid.close_approach_data[0].close_approach_date)
-        На расстояние \(String(format: "%.0f",distanceDouble)) \(kmDistance ? "км"
+        на расстояние \(String(format: "%.0f",distanceDouble)) \(kmDistance ? "км"
         : "лунных орбит")
         """
         

@@ -217,7 +217,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Фильтр" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="547-0a-ygy">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="jzt-S2-ZB0"/>
-                        <barButtonItem key="rightBarButtonItem" title="Принять" id="qrl-OV-Sc8">
+                        <barButtonItem key="rightBarButtonItem" title="Принять" changesSelectionAsPrimaryAction="YES" id="qrl-OV-Sc8">
                             <connections>
                                 <action selector="allowingSettings:" destination="DFs-P4-DUN" id="nLR-VC-m5b"/>
                             </connections>
