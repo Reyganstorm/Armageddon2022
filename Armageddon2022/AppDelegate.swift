@@ -13,7 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let ud = UserDefaults.standard
+        
+        if ud.object(forKey: "kmDist") == nil {
+            UserDefaults.standard.set(true, forKey: "kmDist")
+        }
+        if ud.object(forKey: "kmDist") == nil {
+            UserDefaults.standard.set(false, forKey: "astroHazard")
+        }
         return true
     }
 

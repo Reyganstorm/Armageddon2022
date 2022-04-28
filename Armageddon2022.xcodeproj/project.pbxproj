@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E861DBF1281AA50F0025C163 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E861DBF0281AA50F0025C163 /* StorageManager.swift */; };
 		E8BED2832812E2F500BBE2AF /* ChosenAsteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BED2822812E2F500BBE2AF /* ChosenAsteroids.swift */; };
 		E8BED2852812FA1100BBE2AF /* DeletedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BED2842812FA1100BBE2AF /* DeletedTableViewController.swift */; };
 		E8BF1316281199FB00533CBC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF1315281199FB00533CBC /* DetailViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E861DBF0281AA50F0025C163 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E8BED2822812E2F500BBE2AF /* ChosenAsteroids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenAsteroids.swift; sourceTree = "<group>"; };
 		E8BED2842812FA1100BBE2AF /* DeletedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedTableViewController.swift; sourceTree = "<group>"; };
 		E8BF1315281199FB00533CBC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				E8BED2822812E2F500BBE2AF /* ChosenAsteroids.swift */,
 				E8D321B7280D88B800244667 /* NetworkManager.swift */,
+				E861DBF0281AA50F0025C163 /* StorageManager.swift */,
 			);
 			name = Servises;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				E8D321AF280D685400244667 /* MainViewController.swift in Sources */,
 				E8D32194280D64C800244667 /* AppDelegate.swift in Sources */,
+				E861DBF1281AA50F0025C163 /* StorageManager.swift in Sources */,
 				E8D321B8280D88B800244667 /* NetworkManager.swift in Sources */,
 				E8D32196280D64C800244667 /* SceneDelegate.swift in Sources */,
 				E8D321BA280D890100244667 /* Asteroid.swift in Sources */,

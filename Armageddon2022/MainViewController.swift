@@ -7,35 +7,24 @@
 
 import UIKit
 
-protocol SettingsDelegate {
-    func setNewSettings(for distanceCount: Bool, and potentialHazard: Bool)
-}
-
-protocol CollectionViewDelegate {
-    func addAsteroid(asteroid: Asteroid)
-}
-
 class MainViewController: UICollectionViewController  {
     
     var asteroids: [Asteroid] = []
     var dangerousAsteroids: [Asteroid] = []
-    var kmDistance: Bool = true
-    var dangerous = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        UserDefaults.standard.set(true, forKey: "kmDist")
+//        UserDefaults.standard.set(false, forKey: "astroHazard")
         fetchAsteroids()
     }
 
-   
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let settingsVC = segue.destination as? SettingsViewController else {return}
-        settingsVC.delegate = self
-        settingsVC.kmDistance = self.kmDistance
-        settingsVC.dangerous = self.dangerous
-    }
+    
+    // MARK: - Action Outlets
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        collectionView.reloadData()
+     }
    
 
     // MARK: UICollectionViewDataSource
@@ -45,25 +34,24 @@ class MainViewController: UICollectionViewController  {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dangerous ? dangerousAsteroids.count : asteroids.count
+        UserDefaults.standard.bool(forKey: "astroHazard") ? dangerousAsteroids.count : asteroids.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AsteroidViewCell
         
-        switch dangerous {
+        switch UserDefaults.standard.bool(forKey: "astroHazard"){
         case true:
             let astro = dangerousAsteroids[indexPath.row]
             cell.astro = astro
             cell.setColor(hazard: astro.is_potentially_hazardous_asteroid)
-            cell.configuration(with: astro, and: kmDistance)
+            cell.configuration(with: astro, and: UserDefaults.standard.bool(forKey: "kmDist"))
         case false:
             let astro = asteroids[indexPath.row]
             cell.astro = astro
             cell.setColor(hazard: astro.is_potentially_hazardous_asteroid)
-            cell.configuration(with: astro, and: kmDistance)
+            cell.configuration(with: astro, and: UserDefaults.standard.bool(forKey: "kmDist"))
         }
-        //cell.contentView.layer.borderWidth = 0.6
         
         return cell
     }
@@ -103,11 +91,4 @@ extension MainViewController {
     }
 }
 
-extension MainViewController: SettingsDelegate {
-    func setNewSettings(for distanceCount: Bool, and potentialHazard: Bool) {
-        self.kmDistance = distanceCount
-        self.dangerous = potentialHazard
-        self.collectionView.reloadData()
-    }
-}
 

@@ -9,20 +9,11 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
     
-    var kmDistance: Bool!
-    var dangerous: Bool!
-    
-    var delegate: SettingsDelegate!
+    var kmDistance = UserDefaults.standard.bool(forKey: "kmDist")
+    var dangerous = UserDefaults.standard.bool(forKey: "astroHazard")
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
- 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
     }
@@ -57,18 +48,25 @@ class SettingsViewController: UITableViewController {
     }
     
     @objc func changeDistance() {
-        kmDistance.toggle()
+        switch kmDistance {
+        case true:
+            UserDefaults.standard.set(false, forKey: "kmDist")
+        case false:
+            UserDefaults.standard.set(true, forKey: "kmDist")
+        }
       }
     
     @objc private func switching() {
-        dangerous.toggle()
+        switch dangerous {
+        case true:
+            UserDefaults.standard.set(false, forKey: "astroHazard")
+        case false:
+            UserDefaults.standard.set(true, forKey: "astroHazard")
+        }
     }
     
     
-    @IBAction func allowingSettings(_ sender: UIBarButtonItem) {
-        delegate.setNewSettings(for: kmDistance, and: dangerous)
-        navigationController?.popViewController(animated: true)
-    }
+
     
     
 

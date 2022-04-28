@@ -224,13 +224,14 @@
                         <barButtonItem key="backBarButtonItem" title="Назад" id="jzt-S2-ZB0"/>
                         <barButtonItem key="rightBarButtonItem" title="Принять" changesSelectionAsPrimaryAction="YES" id="qrl-OV-Sc8">
                             <connections>
-                                <action selector="allowingSettings:" destination="DFs-P4-DUN" id="nLR-VC-m5b"/>
+                                <segue destination="d7M-0B-4Nh" kind="unwind" unwindAction="unwindSegueWithSegue:" id="Oe4-oC-9rv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggq-MX-E98" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="d7M-0B-4Nh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3815" y="35"/>
         </scene>
